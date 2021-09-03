@@ -1,0 +1,32 @@
+// ===VAR===
+// ---breakpoints---
+$breakpoint-xs-max: 576px - 1px;
+$breakpoint-sm-min: 576px;
+$breakpoint-sm-max: 768px - 1px;
+$breakpoint-md-min: 768px;
+$breakpoint-md-max: 992px - 1px;
+$breakpoint-lg-min: 992px;
+$breakpoint-lg-max: 1200px - 1px;
+$breakpoint-xl-min: 1200px;
+$breakpoint-xl-max: 1400px - 1px;
+$breakpoint-xxl-min: 1400px;
+// ---/breakpoints---
+
+// ---fonts---
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-xs: 14px;
+$fs-s: 16px;
+$fs-m: 18px;
+$fs-ml: 24px;
+$fs-ls: 32px;
+$fs-l: 36px;
+$fs-xl: 48px;
+// ---/fonts---
+
+$pd-vert: 120px;
+$transition: 0.2s;
+
+$base: 4px;
+// ===/VAR===

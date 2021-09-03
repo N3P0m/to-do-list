@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 500;
+
+    src: local("Gilroy-Medium"), url(../assets/fonts/Gilroy-Medium.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 700;
+    
+    src: local("Gilroy-Bold"), url(../assets/fonts/Gilroy-Bold.ttf) format("truetype");
+}
+// ===MIXINS===
+@mixin gilroy { font-family: 'Gilroy', sans-serif; }
+// ===/MIXINS===

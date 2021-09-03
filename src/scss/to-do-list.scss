@@ -1,0 +1,212 @@
+.textDanger::placeholder { color: $color-red; }
+
+.to-do-list {
+    margin-bottom: $base * 25;
+}
+
+.to-do-list-body {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: $base * 15;
+}
+
+.form {
+
+    @include gilroy;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+
+    &__name {
+
+        @include gilroy;
+
+        width: 30%;
+        margin-bottom: $base * 7;
+        font-size: $fs-ml;
+        font-weight: $fw-bold;
+        background-color: transparent;
+        border: none;
+        border-bottom: $base solid $color-black;
+        transition: $transition;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 20px 20px -10px $color-gray-300;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__task {
+
+        @include gilroy;
+
+        width: 100%;
+        padding: $base * 5 $base * 8 $base * 5 $base * 8;
+        font-size: $fs-ml;
+        font-weight: $fw-bold;
+        background-color: transparent;
+        border: $base solid $color-black;
+        border-radius: $base * 2;
+        transition: $transition;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 20px 20px -10px $color-gray-300;
+        }
+    }
+
+    &__btn {
+        width: $base * 19.5;
+        height: $base * 19.5;
+        font-size: $fs-ml;
+        color: $color-white;
+        cursor: pointer;
+        background-color: $color-black;
+        border: none;
+        border-radius: $base * 2;
+        transition: $transition;
+
+        &:hover { background-color: $color-gray-300; }
+
+        &-img {
+            width: $base * 4;
+            height: $base * 4;
+            filter: invert(100%);
+            transform: rotate(45deg);
+        }
+    }
+
+    @media (max-width: $breakpoint-sm-min) {
+        &__name { width: 60%; }
+    }
+}
+
+.card-list {
+    position: relative;
+
+    &__divider {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: $base * 5;
+        margin-top: $base * 6;
+        font-size: $fs-ml;
+        font-weight: $fw-bold;
+        border-bottom: $base solid $color-black;
+    }
+}
+
+.task {
+    &-list {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-top: $base * 5;
+        font-size: $fs-m;
+        border: $base solid $color-black;
+        border-radius: $base * 2;
+        transition: all 0.2s;
+
+        &--done {
+            text-decoration: line-through;
+            opacity: 0.4;
+        }
+
+        &__name {
+            width: 50%;
+            margin: $base * 6 $base * 9 0 $base * 9;
+            font-weight: $fw-bold;
+            word-wrap: break-word;
+        }
+
+        &__text {
+            width: 90%;
+            margin: 0;
+            word-wrap: break-word;
+        }
+
+        &__checkbox { margin-left: $base * 3; }
+
+        &__btn-cls {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0;
+            margin: $base * 4;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: 0.3s;
+
+            &-img {
+                width: $base * 4;
+                height: $base * 4;
+                transition: 0.3s;
+            }
+
+            &:hover &-img { transform: rotate(90deg); }
+        }
+
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: $base * 4 $base * 11 $base * 10 $base * 11;
+        }
+    }
+
+    &-status {
+        display: block;
+        margin-top: $base*10;
+        font-weight: $fw-bold;
+        color: $color-gray-400;
+    }
+}
+
+.container-text { flex-basis: 80%; }
+// ===UI-components===
+
+.checkbox {
+    $box: &;
+
+    &__custom {
+        position: relative;
+        display: inline-block;
+        width: $base * 8;
+        height: $base * 8;
+        margin: 0;
+        cursor: pointer;
+        background-color: transparent;
+        border: $base solid $color-black;
+        border-radius: $base * 2;
+
+        #{$box}:checked + &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: $base * 6;
+            height: $base * 6;
+            content: "";
+            background-color: $color-black;
+            border-radius: $base;
+            transform: translate(-50%, -50%);
+        }
+
+        #{$box}:focus + & { box-shadow: 0 0 0 4px #3d4cd3; }
+    }
+}
